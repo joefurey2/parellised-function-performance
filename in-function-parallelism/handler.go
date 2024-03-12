@@ -10,33 +10,26 @@ import (
 	"strconv"
 	"time"
 	"runtime"
+	"sync"
 )
 
 
-func GetTime() int64 {
-    return time.Now().UnixNano() / int64(time.Millisecond)
-}
-
-
-
-func Alu(times int) float64 {
-    a := rand.Intn(90) + 10
-    b := rand.Intn(90) + 10
+func Alu(times int, results chan<- float64) {
+    a := rand.Intn(91) + 10
+    b := rand.Intn(91) + 10
     var temp float64
     for i := 0; i < times; i++ {
-        switch i % 4 {
-        case 0:
+        if i % 4 == 0 {
             temp = float64(a + b)
-        case 1:
+        } else if i % 4 == 1 {
             temp = float64(a - b)
-        case 2:
+        } else if i % 4 == 2 { 
             temp = float64(a * b)
-        case 3:
+        } else if i % 4 == 1 { 
             temp = float64(a) / float64(b)
         }
     }
-    // fmt.Println(times)
-    return temp
+    results <- temp
 }
 
 func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
@@ -44,7 +37,7 @@ func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Number of processors:", runtime.NumCPU())
 	
 
-	startTime := GetTime()
+    startTime := time.Unix(0, time.Now().UnixNano())
 	timesStr := r.URL.Query().Get("times")
 
 	if timesStr != "" {
@@ -53,22 +46,32 @@ func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
 
 			results := make(chan float64, times)
 			computationsPerProc := times / numProcs
+			
 
+            var wg sync.WaitGroup
             for i := 0; i < numProcs; i++ {
+                wg.Add(1)
                 go func() {
-                    results <- Alu(1)
+                    defer wg.Done()
+                    Alu(computationsPerProc, results)
                 }()
             }
 
-            var temp float64
-            for i := 0; i < times; i++ {
-                temp += <-results
+			wg.Wait()
+			close(results)
+
+            var total float64
+            for result := range results {
+                total += result
             }
 
+			elapsed := time.Since(startTime)
+            elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
+
             response := map[string]interface{}{
-                "result":   temp,
+                "result":   total,
                 "times":    times,
-                "execTime": GetTime() - startTime,
+                "execTime": elapsedSec,
             }
 
 			responseJSON, err := json.Marshal(response)
@@ -87,6 +90,10 @@ func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
+
+
+
 func main() {
     listenAddr := ":8080"
     if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
@@ -97,14 +104,4 @@ func main() {
 
     log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
     log.Fatal(http.ListenAndServe(listenAddr, nil))
-}
-
-
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-    message := "This HTTP triggered function executed successfully. Pass a name in the query string for a personalized response.\n"
-    name := r.URL.Query().Get("name")
-    if name != "" {
-        message = fmt.Sprintf("Hello, %s. This HTTP triggered function executed successfully.\n", name)
-    }
-    fmt.Fprint(w, message)
 }

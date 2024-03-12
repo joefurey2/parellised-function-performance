@@ -17,34 +17,26 @@ type jsonResponse struct {
     ExecTime int     `json:"execTime"`
 }
 
-func GetTime() int64 {
-    return time.Now().UnixNano() / int64(time.Millisecond)
-}
-
-
-
 func Alu(times int) float64 {
-    a := rand.Intn(90) + 10
-    b := rand.Intn(90) + 10
+    a := rand.Intn(91) + 10
+    b := rand.Intn(91) + 10
     var temp float64
     for i := 0; i < times; i++ {
-        switch i % 4 {
-        case 0:
+        if i % 4 == 0 {
             temp = float64(a + b)
-        case 1:
+        } else if i % 4 == 1 {
             temp = float64(a - b)
-        case 2:
+        } else if i % 4 == 2 { 
             temp = float64(a * b)
-        case 3:
+        } else if i % 4 == 1 { 
             temp = float64(a) / float64(b)
         }
     }
-    fmt.Println(times)
     return temp
 }
 
 func sequentialHandler(w http.ResponseWriter, r *http.Request) {
-	startTime := GetTime()
+    startTime := time.Unix(0, time.Now().UnixNano())
 	timesStr := r.URL.Query().Get("times")
 
 	if timesStr != "" {
@@ -52,11 +44,13 @@ func sequentialHandler(w http.ResponseWriter, r *http.Request) {
 		if err == nil {
 
 			temp := Alu(times)
-
+            
+            elapsed := time.Since(startTime)
+            elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
             response := map[string]interface{}{
                 "result":   temp,
                 "times":    times,
-                "execTime": GetTime() - startTime,
+                "execTime": elapsedSec,
             }
 
 			responseJSON, err := json.Marshal(response)
