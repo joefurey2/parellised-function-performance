@@ -11,12 +11,6 @@ import (
 	"time"
 )
 
-type jsonResponse struct {
-    Result   float64 `json:"result"`
-    Times    int     `json:"times"`
-    ExecTime int     `json:"execTime"`
-}
-
 func Alu(times int) float64 {
     a := rand.Intn(91) + 10
     b := rand.Intn(91) + 10
@@ -52,7 +46,7 @@ func sequentialHandler(w http.ResponseWriter, r *http.Request) {
                 "times":    times,
                 "execTime": elapsedSec,
             }
-
+            
 			responseJSON, err := json.Marshal(response)
 			if err != nil {
                 http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -74,8 +68,7 @@ func main() {
     if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
         listenAddr = ":" + val
     }
-    http.HandleFunc("/api/hello-handler", helloHandler)
-	http.HandleFunc("/api/sequential-processing", sequentialHandler)
+	http.HandleFunc("/api/sequential-processing/", sequentialHandler)
 
     log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
     log.Fatal(http.ListenAndServe(listenAddr, nil))
