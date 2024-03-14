@@ -1,22 +1,65 @@
 package function
 
 import (
-	"fmt"
-	"io"
-	"net/http"
+    "encoding/json"
+    "fmt"
+    "io"
+    "math/rand"
+    "net/http"
+    "strconv"
+    "time"
 )
 
+func Alu(times int) float64 {
+    a := rand.Intn(91) + 10
+    b := rand.Intn(91) + 10
+    var temp float64
+    for i := 0; i < times; i++ {
+        if i%4 == 0 {
+            temp = float64(a + b)
+        } else if i%4 == 1 {
+            temp = float64(a - b)
+        } else if i%4 == 2 {
+            temp = float64(a * b)
+        } else if i%4 == 3 {
+            temp = float64(a) / float64(b)
+        }
+    }
+    return temp
+}
+
 func Handle(w http.ResponseWriter, r *http.Request) {
-	var input []byte
+    startTime := time.Unix(0, time.Now().UnixNano())
+    timesStr := r.URL.Query().Get("times")
 
-	if r.Body != nil {
-		defer r.Body.Close()
+    if timesStr != "" {
+        times, err := strconv.Atoi(timesStr)
+        fmt.Printf("times = %d", times)
 
-		body, _ := io.ReadAll(r.Body)
+        if err == nil {
 
-		input = body
-	}
+            temp := Alu(times)
 
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf("Body: %s", string(input))))
+            elapsed := time.Since(startTime)
+            elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
+            response := map[string]interface{}{
+                "result":   temp,
+                "times":    times,
+                "execTime": elapsedSec,
+            }
+
+            responseJSON, err := json.Marshal(response)
+            if err != nil {
+                http.Error(w, err.Error(), http.StatusInternalServerError)
+                return
+            }
+
+            w.Header().Set("Content-Type", "application/json")
+            w.Write(responseJSON)
+        }
+
+    } else {
+        message := "Error with times value passed"
+        http.Error(w, message, http.StatusBadRequest)
+    }
 }
