@@ -67,6 +67,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 				"result":   total,
 				"times":    times,
 				"execTime": elapsedSec,
+				"numProcs": numProcs,
 			}
 
 			responseJSON, err := json.Marshal(response)
