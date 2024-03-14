@@ -6,5 +6,5 @@ functions:
   http-printer:
     lang: golang-middleware
     handler: ./http-printer
-    image: golang-test
+    image: docker.io/joefurey2/golang-test:latest
 
