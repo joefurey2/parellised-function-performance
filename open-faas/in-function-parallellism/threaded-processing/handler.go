@@ -25,7 +25,7 @@ func Alu(times int, results chan<- float64) {
             temp = float64(a - b)
         } else if i % 4 == 2 { 
             temp = float64(a * b)
-        } else if i % 4 == 3 { 
+        } else if i % 4 == 1 { 
             temp = float64(a) / float64(b)
         }
     }
@@ -72,6 +72,7 @@ func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
                 "result":   total,
                 "times":    times,
                 "execTime": elapsedSec,
+				"numProcs": numProcs,
             }
 
 			responseJSON, err := json.Marshal(response)
