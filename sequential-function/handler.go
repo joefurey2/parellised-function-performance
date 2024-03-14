@@ -35,6 +35,8 @@ func sequentialHandler(w http.ResponseWriter, r *http.Request) {
 
 	if timesStr != "" {
 		times, err := strconv.Atoi(timesStr)
+        fmt.Printf("times = %d", times)
+
 		if err == nil {
 
 			temp := Alu(times)
@@ -68,7 +70,7 @@ func main() {
     if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
         listenAddr = ":" + val
     }
-	http.HandleFunc("/api/sequential-processing/", sequentialHandler)
+	http.HandleFunc("/api/sequential-processing", sequentialHandler)
 
     log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
     log.Fatal(http.ListenAndServe(listenAddr, nil))
