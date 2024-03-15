@@ -49,9 +49,10 @@ func main() {
 		go func() {
 			defer wg.Done()
 			resp, err := http.Get(fmt.Sprintf("http://20.26.236.208:8080/function/sequential-function?times=%d", timesPerProc))
-			// https://in-function-parallelism.azurewebsites.net/api/in-function-parallelism?
-			// https://seqential-parallelism.azurewebsites.net/api/sequential-processing?
+			// https://threaded-function.azurewebsites.net/api/in-function-parallelism?
+			// https://sequential-function.azurewebsites.net/api/sequential-processing??
 			// http://20.26.236.208:8080/function/sequential-function
+			// http://20.26.236.208:8080/function/threaded-processing
 			if err != nil {
 				fmt.Println("Error:", err)
 				return
