@@ -16,7 +16,7 @@ type MultiplyResponse struct {
 	Result [][]int `json:"result"`
 }
 
-func multiplyHandler(w http.ResponseWriter, r *http.Request) {
+func Handle(w http.ResponseWriter, r *http.Request) {
 	// Decode the request
 	var req MultiplyRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
