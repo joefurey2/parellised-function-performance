@@ -1,2 +1,6 @@
-OpenFaaS Sequential,100,0.00002780
-OpenFaaS Threaded,100,0.00002310
+Azure Sequential,100,0.00003050
+Azure Threaded,100,0.00004130
+OpenFaaS Sequential,100,0.00002620
+OpenFaaS Threaded,100,0.00002500
+Azure Sequential,50,0.10496998,2
+OpenFaaS Sequential,50,0.04158020,2

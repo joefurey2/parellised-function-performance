@@ -1,2 +1,6 @@
-OpenFaaS Sequential, Matrix Size: 100, Elapsed time: 0.00002780
-OpenFaaS Threaded, Matrix Size: 100, Elapsed time: 0.00002310
+Azure Sequential, Matrix Size: 100, Elapsed time: 0.00003050
+Azure Threaded, Matrix Size: 100, Elapsed time: 0.00004130
+OpenFaaS Sequential, Matrix Size: 100, Elapsed time: 0.00002620
+OpenFaaS Threaded, Matrix Size: 100, Elapsed time: 0.00002500
+Azure Sequential, Matrix Size: 50, Elapsed time: 0.10496998
+OpenFaaS Sequential, Matrix Size: 50, Elapsed time: 0.04158020

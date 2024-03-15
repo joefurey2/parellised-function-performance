@@ -5,6 +5,11 @@ import concurrent.futures
 import csv
 
 
+# NOTE
+# in order to multiply two matrices, the number of columns in matrix A
+# must be equal to the number of rows in column B.
+
+
 def make_request(url, rows, cols):
     response = requests.get(f"{url}?rows={rows}&cols={cols}")
     return response.json()
@@ -34,12 +39,10 @@ def main():
     rows = args.rows
     cols = args.cols
     processes = args.processes
-    # timesPerProc = times // processes
-
 
     sequentialUrls = {
-        # "Azure Sequential": "https://sequential-function.azurewebsites.net/api/sequential-processing",
-        # "Azure Threaded": "https://threaded-function.azurewebsites.net/api/in-function-parallelism",
+        "Azure Sequential": "https://sequential-function.azurewebsites.net/api/sequential-processing",
+        "Azure Threaded": "https://threaded-function.azurewebsites.net/api/in-function-parallelism",
         "OpenFaaS Sequential": "http://20.26.236.208:8080/function/sequential-matrix",
         "OpenFaaS Threaded": "http://20.26.236.208:8080/function/threaded-matrix",
     }
@@ -49,27 +52,23 @@ def main():
         result = make_request(url, rows, cols)
         write_to_file("results.txt", f"{name}, Matrix Size: {result['matrix size']}, Elapsed time: {result['execTime']}\n", 
                         "results.csv", [name, result['matrix size'], result['execTime']])
-        # Test by passing a fraction of times to a defined number of processes
-        # for _ in range(processes):
-        #     result, elapsed = measure_time(url, times // processes)
-        #     write_to_file("results.txt", f"Name: {name}, URL: {url}, Times: {times // processes}, Result: {result}, Elapsed time: {elapsed}\n")
+    
+    multifunctionUrls = {
+        "Azure Sequential": "https://sequential-function.azurewebsites.net/api/sequential-processing",
+        "OpenFaaS Sequential": "http://20.26.236.208:8080/function/sequential-matrix",
+    }
 
-    # multifunctionUrls = {
-    #     "Azure Sequential": "https://sequential-function.azurewebsites.net/api/sequential-processing",
-    #     # "Azure Threaded": "https://threaded-function.azurewebsites.net/api/in-function-parallelism",
-    #     "OpenFaaS Sequential": "http://20.26.236.208:8080/function/sequential-function",
-    #     # "OpenFaaS Threaded": "http://20.26.236.208:8080/function/threaded-processing",
-    # }
-
-    # with concurrent.futures.ThreadPoolExecutor() as executor:
-    #     for name, url in multifunctionUrls.items():
-    #         startTime = time.time()
-    #         futures = [executor.submit(make_request, url, timesPerProc) for _ in range(processes)]
-    #         totalScore = sum(f.result()['result'] for f in concurrent.futures.as_completed(futures))
-    #         elapsed = time.time() - startTime
-    #         elapsedSec = "{:.8f}".format(elapsed)
-    #         write_to_file("results.txt", f"URL: {name}, Total Score: {totalScore}, Elapsed time: {elapsedSec}\n", 
-    #                   "results.csv", [name, times, elapsedSec, processes])
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        for name, url in multifunctionUrls.items():
+            startTime = time.time()
+            rows_per_process = rows // processes
+            cols_per_process = cols // processes
+            futures = [executor.submit(make_request, url, rows_per_process, cols_per_process) for _ in range(processes)]
+            totalMatrixSize = sum(f.result()['matrix size'] for f in concurrent.futures.as_completed(futures))         
+            elapsed = time.time() - startTime
+            elapsedSec = "{:.8f}".format(elapsed)
+            write_to_file("results.txt", f"{name}, Matrix Size: {totalMatrixSize}, Elapsed time: {elapsedSec}\n", 
+                    "results.csv", [name, totalMatrixSize, elapsedSec, processes])
 
 if __name__ == "__main__":
     main()
