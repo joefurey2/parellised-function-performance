@@ -14,84 +14,108 @@ import (
 )
 
 
-func Alu(times int, results chan<- float64) {
-    a := rand.Intn(91) + 10
-    b := rand.Intn(91) + 10
-    var temp float64
-    for i := 0; i < times; i++ {
-        if i % 4 == 0 {
-            temp = float64(a + b)
-        } else if i % 4 == 1 {
-            temp = float64(a - b)
-        } else if i % 4 == 2 { 
-            temp = float64(a * b)
-        } else if i % 4 == 3 { 
-            temp = float64(a) / float64(b)
-        }
-    }
-    results <- temp
-}
-
-func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
-	numProcs := runtime.NumCPU()
-	fmt.Println("Number of processors:", runtime.NumCPU())
-	
-
-    startTime := time.Unix(0, time.Now().UnixNano())
-	timesStr := r.URL.Query().Get("times")
-
-	if timesStr != "" {
-		times, err := strconv.Atoi(timesStr)
-		if err == nil {
-
-			results := make(chan float64, times)
-			computationsPerProc := times / numProcs
-			
-
-            var wg sync.WaitGroup
-            for i := 0; i < numProcs; i++ {
-                wg.Add(1)
-                go func() {
-                    defer wg.Done()
-                    Alu(computationsPerProc, results)
-                }()
-            }
-
-			wg.Wait()
-			close(results)
-
-            var total float64
-            for result := range results {
-                total += result
-            }
-
-			elapsed := time.Since(startTime)
-            elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
-
-            response := map[string]interface{}{
-                "result":   total,
-                "times":    times,
-                "execTime": elapsedSec,
-            }
-
-			responseJSON, err := json.Marshal(response)
-			if err != nil {
-                http.Error(w, err.Error(), http.StatusInternalServerError)
-                return
-            }
-
-            w.Header().Set("Content-Type", "application/json")
-            w.Write(responseJSON)		
+func multiply(a, b [][]int, result [][]int, start, end int) {
+	for i := start; i < end; i++ {
+		for j := 0; j < len(b[0]); j++ {
+			for k := 0; k < len(b); k++ {
+				result[i][j] += a[i][k] * b[k][j]
+			}
 		}
-
-	} else {
-		message := "Error with times value passed"
-	    http.Error(w, message, http.StatusBadRequest)
 	}
 }
 
+func matrixMultiplication(rows, cols, numProcesses int) [][]int {
+	a := make([][]int, rows)
+	for i := range a {
+		a[i] = make([]int, cols)
+		for j := range a[i] {
+			a[i][j] = rand.Intn(91) + 10
+		}
+	}
+
+	b := make([][]int, rows)
+	for i := range b {
+		b[i] = make([]int, cols)
+		for j := range b[i] {
+			b[i][j] = rand.Intn(91) + 10
+		}
+	}
+
+	// Initialize result matrix
+	result := make([][]int, rows)
+	for i := range result {
+		result[i] = make([]int, cols)
+	}
+
+	var wg sync.WaitGroup
+	wg.Add(numProcesses)
+
+	// Perform matrix multiplication
+	for i := 0; i < numProcesses; i++ {
+		go func(i int) {
+			defer wg.Done()
+			start := (rows / numProcesses) * i
+			end := start + (rows / numProcesses)
+			if i == numProcesses-1 {
+				end = rows
+			}
+			multiply(a, b, result, start, end)
+		}(i)
+	}
+
+	wg.Wait()
+
+	return result
+}
 
 
+func inFunctionHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("entering inFunctionHandler")
+	numProcs := runtime.NumCPU()
+	fmt.Println("Number of processors:", numProcs)
+
+	startTime := time.Unix(0, time.Now().UnixNano())
+	rowStr := r.URL.Query().Get("rows")
+	colStr := r.URL.Query().Get("cols")
+
+	if rowStr != "" && colStr != "" {
+		rows, err1 := strconv.Atoi(rowStr)
+		if err1 != nil {
+			http.Error(w, "Error with rows value passed", http.StatusBadRequest)
+			return
+		}
+
+		cols, err2 := strconv.Atoi(colStr)
+		if err2 != nil {
+			http.Error(w, "Error with cols value passed", http.StatusBadRequest)
+			return
+		}
+		fmt.Printf("entering multiplication")
+		matrixMultiplication(rows, cols, numProcs)
+
+		elapsed := time.Since(startTime)
+		elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
+
+		response := map[string]interface{}{
+			"matrix size": rows * cols,
+			"execTime":    elapsedSec,
+			"numProcs":    numProcs,
+		}
+
+		responseJSON, err := json.Marshal(response)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(responseJSON)
+
+	} else {
+		message := "Error with times value passed"
+		http.Error(w, message, http.StatusBadRequest)
+	}
+}
 
 
 func main() {
@@ -99,7 +123,7 @@ func main() {
     if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
         listenAddr = ":" + val
     }
-    // http.HandleFunc("/api/hello-handler", helloHandler)
+
 	http.HandleFunc("/api/in-function-parallelism", inFunctionHandler)
 
     log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)

@@ -1,0 +1,2 @@
+OpenFaaS Sequential, Matrix Size: 100, Elapsed time: 0.00002780
+OpenFaaS Threaded, Matrix Size: 100, Elapsed time: 0.00002310
