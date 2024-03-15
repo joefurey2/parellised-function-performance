@@ -86,13 +86,12 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		result := matrixMultiplication(rows, cols, numProcs)
+		matrixMultiplication(rows, cols, numProcs)
 
 		elapsed := time.Since(startTime)
 		elapsedSec := fmt.Sprintf("%.8f", elapsed.Seconds())
 
 		response := map[string]interface{}{
-			"result":      result,
 			"matrix size": rows * cols,
 			"execTime":    elapsedSec,
 			"numProcs":    numProcs,
