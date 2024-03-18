@@ -1,6 +1,323 @@
-Azure Sequential, Matrix Size: 100, Elapsed time: 0.00003050
-Azure Threaded, Matrix Size: 100, Elapsed time: 0.00004130
-OpenFaaS Sequential, Matrix Size: 100, Elapsed time: 0.00002620
-OpenFaaS Threaded, Matrix Size: 100, Elapsed time: 0.00002500
-Azure Sequential, Matrix Size: 50, Elapsed time: 0.10496998
-OpenFaaS Sequential, Matrix Size: 50, Elapsed time: 0.04158020
+Azure Sequential, Matrix Size: 4, Elapsed time: 0.00042890
+Azure Threaded, Matrix Size: 4, Elapsed time: 0.00009290, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4, Elapsed time: 0.00001820
+OpenFaaS Threaded, Matrix Size: 4, Elapsed time: 0.00001980, Threads: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 6.22683692, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04601979, Processes: 1
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.13968682, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04255104, Processes: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.12961912, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04631591, Processes: 4
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.15436196, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.06153178, Processes: 8
+Azure Sequential, Matrix Size: 16, Elapsed time: 0.00019650
+Azure Threaded, Matrix Size: 16, Elapsed time: 0.00005280, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16, Elapsed time: 0.00002140
+OpenFaaS Threaded, Matrix Size: 16, Elapsed time: 0.00003230, Threads: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.09390593, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04648185, Processes: 1
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.10646820, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04203486, Processes: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.11206698, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.05043197, Processes: 4
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.13988996, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.05313897, Processes: 8
+Azure Sequential, Matrix Size: 64, Elapsed time: 0.00004580
+Azure Threaded, Matrix Size: 64, Elapsed time: 0.00004310, Threads: 2
+OpenFaaS Sequential, Matrix Size: 64, Elapsed time: 0.00002520
+OpenFaaS Threaded, Matrix Size: 64, Elapsed time: 0.00001960, Threads: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.09921622, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04569387, Processes: 1
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.12029195, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04352999, Processes: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.12997293, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04733372, Processes: 4
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.15334678, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.06737590, Processes: 8
+Azure Sequential, Matrix Size: 256, Elapsed time: 0.00028790
+Azure Threaded, Matrix Size: 256, Elapsed time: 0.00008520, Threads: 2
+OpenFaaS Sequential, Matrix Size: 256, Elapsed time: 0.00003840
+OpenFaaS Threaded, Matrix Size: 256, Elapsed time: 0.00005040, Threads: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.10423708, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.03886700, Processes: 1
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.12870383, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.06711411, Processes: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 9.71307492, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.05555892, Processes: 4
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.14999008, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.05979705, Processes: 8
+Azure Sequential, Matrix Size: 1024, Elapsed time: 0.00141590
+Azure Threaded, Matrix Size: 1024, Elapsed time: 0.00031630, Threads: 2
+OpenFaaS Sequential, Matrix Size: 1024, Elapsed time: 0.00011801
+OpenFaaS Threaded, Matrix Size: 1024, Elapsed time: 0.00017161, Threads: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.10335898, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04528427, Processes: 1
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.14506698, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04472709, Processes: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 7.05188513, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.06088281, Processes: 4
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.16027403, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.07631588, Processes: 8
+Azure Sequential, Matrix Size: 4096, Elapsed time: 0.00117020
+Azure Threaded, Matrix Size: 4096, Elapsed time: 0.00186769, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4096, Elapsed time: 0.00063483
+OpenFaaS Threaded, Matrix Size: 4096, Elapsed time: 0.00050602, Threads: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.18364000, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.07601786, Processes: 1
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.15720701, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.07021618, Processes: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.21883702, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.07391095, Processes: 4
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.24908590, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.11003089, Processes: 8
+Azure Sequential, Matrix Size: 16384, Elapsed time: 0.01290020
+Azure Threaded, Matrix Size: 16384, Elapsed time: 0.01723898, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16384, Elapsed time: 0.00654700
+OpenFaaS Threaded, Matrix Size: 16384, Elapsed time: 0.00432790, Threads: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.24851274, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.15756106, Processes: 1
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.27600789, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.16254210, Processes: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 6.59240508, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.22131896, Processes: 4
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.52559900, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.35471892, Processes: 8
+Azure Sequential, Matrix Size: 65536, Elapsed time: 0.13160790
+Azure Threaded, Matrix Size: 65536, Elapsed time: 0.12119817, Threads: 2
+OpenFaaS Sequential, Matrix Size: 65536, Elapsed time: 0.05170053
+OpenFaaS Threaded, Matrix Size: 65536, Elapsed time: 0.03401213, Threads: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.58798814, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.39911699, Processes: 1
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.80258775, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.49594998, Processes: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 1.35877895, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.75941110, Processes: 4
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 1.62590075, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 1.66199589, Processes: 8
+Azure Sequential, Matrix Size: 262144, Elapsed time: 1.12304788
+Azure Threaded, Matrix Size: 262144, Elapsed time: 1.00996984, Threads: 2
+OpenFaaS Sequential, Matrix Size: 262144, Elapsed time: 0.69440649
+OpenFaaS Threaded, Matrix Size: 262144, Elapsed time: 0.38909632, Threads: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 3.23625588, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.06832314, Processes: 1
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 2.96458602, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.08235383, Processes: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 5.90250897, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 3.13278008, Processes: 4
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 10.74822402, Processes: 8
+Azure Sequential, Matrix Size: 4, Elapsed time: 0.00002830
+Azure Threaded, Matrix Size: 4, Elapsed time: 0.00005000, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4, Elapsed time: 0.00001380
+OpenFaaS Threaded, Matrix Size: 4, Elapsed time: 0.00001510, Threads: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.14250588, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04485297, Processes: 1
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.12630773, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04024982, Processes: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.12341499, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04870200, Processes: 4
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.12820101, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.05974102, Processes: 8
+Azure Sequential, Matrix Size: 16, Elapsed time: 0.00005970
+Azure Threaded, Matrix Size: 16, Elapsed time: 0.00006190, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16, Elapsed time: 0.00001880
+OpenFaaS Threaded, Matrix Size: 16, Elapsed time: 0.00001670, Threads: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.11622310, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04327035, Processes: 1
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.13833809, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04292917, Processes: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.11024308, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04583502, Processes: 4
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.11633086, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.06486702, Processes: 8
+Azure Sequential, Matrix Size: 64, Elapsed time: 0.00014130
+Azure Threaded, Matrix Size: 64, Elapsed time: 0.00017110, Threads: 2
+OpenFaaS Sequential, Matrix Size: 64, Elapsed time: 0.00002410
+OpenFaaS Threaded, Matrix Size: 64, Elapsed time: 0.00003170, Threads: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.10609484, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04146194, Processes: 1
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.09747028, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.03823829, Processes: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.10673690, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.05052686, Processes: 4
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.13286591, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.06008983, Processes: 8
+Azure Sequential, Matrix Size: 256, Elapsed time: 0.00016630
+Azure Threaded, Matrix Size: 256, Elapsed time: 0.00008650, Threads: 2
+OpenFaaS Sequential, Matrix Size: 256, Elapsed time: 0.00004100
+OpenFaaS Threaded, Matrix Size: 256, Elapsed time: 0.00005310, Threads: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.09434605, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.03743887, Processes: 1
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.10055614, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.05790710, Processes: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.10746908, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.04396296, Processes: 4
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.11599708, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.05421710, Processes: 8
+Azure Sequential, Matrix Size: 1024, Elapsed time: 0.00132380
+Azure Threaded, Matrix Size: 1024, Elapsed time: 0.00072479, Threads: 2
+OpenFaaS Sequential, Matrix Size: 1024, Elapsed time: 0.00012450
+OpenFaaS Threaded, Matrix Size: 1024, Elapsed time: 0.00016351, Threads: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.13629508, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04989815, Processes: 1
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.11135793, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04251003, Processes: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.15485907, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.05264616, Processes: 4
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.18130279, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.08546519, Processes: 8
+Azure Sequential, Matrix Size: 4096, Elapsed time: 0.00544420
+Azure Threaded, Matrix Size: 4096, Elapsed time: 0.00661186, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4096, Elapsed time: 0.00076793
+OpenFaaS Threaded, Matrix Size: 4096, Elapsed time: 0.00098654, Threads: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.14786291, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.06459904, Processes: 1
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.16789985, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.09218001, Processes: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.17952394, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.07553267, Processes: 4
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.22054720, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.11756587, Processes: 8
+Azure Sequential, Matrix Size: 16384, Elapsed time: 0.01397600
+Azure Threaded, Matrix Size: 16384, Elapsed time: 0.01659170, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16384, Elapsed time: 0.00626836
+OpenFaaS Threaded, Matrix Size: 16384, Elapsed time: 0.00363185, Threads: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.24587917, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.16461301, Processes: 1
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.27082705, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.16583705, Processes: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.33094192, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.21720886, Processes: 4
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.52516294, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.36031199, Processes: 8
+Azure Sequential, Matrix Size: 65536, Elapsed time: 0.10302440
+Azure Threaded, Matrix Size: 65536, Elapsed time: 0.12785220, Threads: 2
+OpenFaaS Sequential, Matrix Size: 65536, Elapsed time: 0.05301834
+OpenFaaS Threaded, Matrix Size: 65536, Elapsed time: 0.03359362, Threads: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.77769089, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.40325093, Processes: 1
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.76480985, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.56516290, Processes: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.94794583, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.75254393, Processes: 4
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 1.67765903, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 1.42725301, Processes: 8
+Azure Sequential, Matrix Size: 262144, Elapsed time: 1.06830326
+Azure Threaded, Matrix Size: 262144, Elapsed time: 1.03394478, Threads: 2
+OpenFaaS Sequential, Matrix Size: 262144, Elapsed time: 0.65217272
+OpenFaaS Threaded, Matrix Size: 262144, Elapsed time: 0.37527621, Threads: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 3.22713590, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.00785017, Processes: 1
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 2.91955709, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.76322269, Processes: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 5.88684797, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 3.19471788, Processes: 4
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 6.60628104, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 5.38359499, Processes: 8
+Azure Sequential, Matrix Size: 4, Elapsed time: 0.00010530
+Azure Threaded, Matrix Size: 4, Elapsed time: 0.00003710, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4, Elapsed time: 0.00002890
+OpenFaaS Threaded, Matrix Size: 4, Elapsed time: 0.00001500, Threads: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.09800696, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.03916311, Processes: 1
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.10595322, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.04778910, Processes: 2
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.12010384, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.05299687, Processes: 4
+Azure Multi-function, Matrix Size: 4, Elapsed time: 0.11907482, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4, Elapsed time: 0.05957413, Processes: 8
+Azure Sequential, Matrix Size: 16, Elapsed time: 0.00002960
+Azure Threaded, Matrix Size: 16, Elapsed time: 0.00004820, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16, Elapsed time: 0.00001680
+OpenFaaS Threaded, Matrix Size: 16, Elapsed time: 0.00002490, Threads: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.09142399, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.03839397, Processes: 1
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.09968400, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04775977, Processes: 2
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.11026788, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.04771304, Processes: 4
+Azure Multi-function, Matrix Size: 16, Elapsed time: 0.12283206, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16, Elapsed time: 0.06714702, Processes: 8
+Azure Sequential, Matrix Size: 64, Elapsed time: 0.00003970
+Azure Threaded, Matrix Size: 64, Elapsed time: 0.00019830, Threads: 2
+OpenFaaS Sequential, Matrix Size: 64, Elapsed time: 0.00003030
+OpenFaaS Threaded, Matrix Size: 64, Elapsed time: 0.00004120, Threads: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.09932423, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.05666208, Processes: 1
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.12609982, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04737282, Processes: 2
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.11752319, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.04782534, Processes: 4
+Azure Multi-function, Matrix Size: 64, Elapsed time: 0.14497399, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 64, Elapsed time: 0.05661416, Processes: 8
+Azure Sequential, Matrix Size: 256, Elapsed time: 0.00009030
+Azure Threaded, Matrix Size: 256, Elapsed time: 0.00008870, Threads: 2
+OpenFaaS Sequential, Matrix Size: 256, Elapsed time: 0.00004910
+OpenFaaS Threaded, Matrix Size: 256, Elapsed time: 0.00003690, Threads: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.08473301, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.03819013, Processes: 1
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.13573885, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.04675102, Processes: 2
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.10810518, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.05472684, Processes: 4
+Azure Multi-function, Matrix Size: 256, Elapsed time: 0.17623281, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 256, Elapsed time: 0.06847095, Processes: 8
+Azure Sequential, Matrix Size: 1024, Elapsed time: 0.00032860
+Azure Threaded, Matrix Size: 1024, Elapsed time: 0.00073609, Threads: 2
+OpenFaaS Sequential, Matrix Size: 1024, Elapsed time: 0.00016711
+OpenFaaS Threaded, Matrix Size: 1024, Elapsed time: 0.00020421, Threads: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.09998727, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04350901, Processes: 1
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.11854196, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.04341888, Processes: 2
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.11088085, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.05053401, Processes: 4
+Azure Multi-function, Matrix Size: 1024, Elapsed time: 0.15524888, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 1024, Elapsed time: 0.06708002, Processes: 8
+Azure Sequential, Matrix Size: 4096, Elapsed time: 0.00602451
+Azure Threaded, Matrix Size: 4096, Elapsed time: 0.00941854, Threads: 2
+OpenFaaS Sequential, Matrix Size: 4096, Elapsed time: 0.00133576
+OpenFaaS Threaded, Matrix Size: 4096, Elapsed time: 0.00065083, Threads: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.15584207, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.06810641, Processes: 1
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.15754604, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.06735015, Processes: 2
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.14958310, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.07252812, Processes: 4
+Azure Multi-function, Matrix Size: 4096, Elapsed time: 0.19203091, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 4096, Elapsed time: 0.10883141, Processes: 8
+Azure Sequential, Matrix Size: 16384, Elapsed time: 0.01317581
+Azure Threaded, Matrix Size: 16384, Elapsed time: 0.01245352, Threads: 2
+OpenFaaS Sequential, Matrix Size: 16384, Elapsed time: 0.00654892
+OpenFaaS Threaded, Matrix Size: 16384, Elapsed time: 0.00382507, Threads: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.23164916, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.15112996, Processes: 1
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.26235986, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.18914890, Processes: 2
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.31638885, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.21021795, Processes: 4
+Azure Multi-function, Matrix Size: 16384, Elapsed time: 0.43987584, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 16384, Elapsed time: 0.36610794, Processes: 8
+Azure Sequential, Matrix Size: 65536, Elapsed time: 0.11492230
+Azure Threaded, Matrix Size: 65536, Elapsed time: 0.12172220, Threads: 2
+OpenFaaS Sequential, Matrix Size: 65536, Elapsed time: 0.04953725
+OpenFaaS Threaded, Matrix Size: 65536, Elapsed time: 0.02665860, Threads: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.74265766, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.40629578, Processes: 1
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.72701597, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.46865106, Processes: 2
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 0.94973779, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 0.74904203, Processes: 4
+Azure Multi-function, Matrix Size: 65536, Elapsed time: 1.73424792, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 65536, Elapsed time: 1.52514505, Processes: 8
+Azure Sequential, Matrix Size: 262144, Elapsed time: 0.94325118
+Azure Threaded, Matrix Size: 262144, Elapsed time: 1.02640033, Threads: 2
+OpenFaaS Sequential, Matrix Size: 262144, Elapsed time: 0.69153039
+OpenFaaS Threaded, Matrix Size: 262144, Elapsed time: 0.36273594, Threads: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 2.66062093, Processes: 1
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.03710389, Processes: 1
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 3.06167293, Processes: 2
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 2.18185711, Processes: 2
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 5.89178205, Processes: 4
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 3.30432105, Processes: 4
+Azure Multi-function, Matrix Size: 262144, Elapsed time: 7.34666491, Processes: 8
+OpenFaaS Multi-function, Matrix Size: 262144, Elapsed time: 5.42757201, Processes: 8
